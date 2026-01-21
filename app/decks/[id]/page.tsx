@@ -1,6 +1,5 @@
 // app/decks/[id]/page.tsx
 
-import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar/navbar";
@@ -79,13 +78,12 @@ export default async function DeckDetailPage() {
         {/* GRID DE CARTAS */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {MOCK_DECK.cardList.map((card, index) => (
-            <div key={index}>
-              <DigimonCard
-                quantity={card.qty}
-                cardId={card.id}
-                cardName={card.name}
-              />
-            </div>
+            <DigimonCard
+              quantity={card.qty}
+              cardId={card.id}
+              cardName={card.name}
+              key={index}
+            />
           ))}
         </div>
       </main>

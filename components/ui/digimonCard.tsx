@@ -30,7 +30,7 @@ export const DigimonCard = ({ quantity, cardId, cardName }: Props) => {
           className="
           absolute top-0 left-[105%] ml-2
           hidden lg:block
-          w-[450px] aspect-3/4 
+          w-[450px] aspect-[3/4] 
           z-50 pointer-events-none
           animate-in fade-in slide-in-from-left-2 duration-300
         "
@@ -48,16 +48,16 @@ export const DigimonCard = ({ quantity, cardId, cardName }: Props) => {
       )}
 
       {/* --- CARTA MINIATURA (TU DISEÑO ORIGINAL) --- */}
-      <div className="absolute -top-2 -left-2 z-10 bg-indigo-600 text-white text-[10px] w-8 h-8 flex items-center justify-center border-2 border-white shadow-[2px_2px_0px_#000]">
+      <div className="absolute -top-2 -left-2 z-10 bg-indigo-600 text-white text-[10px] w-7 h-7 flex items-center justify-center border-2 border-white shadow-[2px_2px_0px_#000]">
         x{quantity}
       </div>
 
-      <div className="relative aspect-3/4 border-2 border-zinc-800 group-hover:border-yellow-500 transition-all bg-zinc-900 overflow-hidden shadow-lg cursor-zoom-in">
+      <div className="relative aspect-3/4 border-2 border-zinc-800 group-hover:border-yellow-500 transition-all bg-zinc-900 overflow-hidden shadow-lg cursor-zoom-in rounded-2xl">
         <Image
           src={getImageUrl(cardId)}
           alt={cardName}
           fill
-          className="object-contain group-hover:scale-105 transition-transform duration-300"
+          className=" group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 768px) 50vw, 20vw"
         />
 

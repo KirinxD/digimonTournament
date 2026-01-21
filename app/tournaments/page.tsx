@@ -1,5 +1,5 @@
 // app/tournaments/page.tsx
-import { ButtonViewDecks, DeckWinner } from "@/components";
+import { ButtonViewDecks, DeckWinner, TInfo } from "@/components";
 import { Navbar } from "@/components/navbar/navbar";
 import { Users, Calendar } from "lucide-react";
 
@@ -24,10 +24,9 @@ const MOCK_TOURNAMENTS = [
 
 export default function TournamentsPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen">
       <Navbar />
-
-      <main className="max-w-6xl mx-auto p-6 pt-12">
+      <main className="max-w-4xl mx-auto pt-10 px-6 pb-10">
         <header className="mb-12 border-l-8 border-indigo-600 pl-6">
           <h1 className="text-2xl md:text-3xl text-indigo-400 mb-2 underline decoration-double">
             TOURNAMENT_DATABASE
@@ -51,20 +50,7 @@ export default function TournamentsPage() {
 
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 {/* Info Principal */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-[10px] text-zinc-500">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} /> {t.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Users size={12} /> {t.players} TAMERS
-                    </span>
-                  </div>
-                  <h3 className="text-lg group-hover:text-indigo-400 transition-colors">
-                    {t.name}
-                  </h3>
-                </div>
-
+                <TInfo date={t.date} players={t.players} tName={t.name} />
                 <DeckWinner winnerDeck={t.winnerDeck} />
                 <ButtonViewDecks />
               </div>
